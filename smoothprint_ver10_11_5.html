@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Print</title>
+    <style>
+        body {
+            background-color: mintcream;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+        label, select, input, button {
+            color: red;
+            margin: 10px 0;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="C:\Users\AbutovFr\Desktop\smooth print app\ver 11.1\ver 11.4 background\BrotherLogoBlue.png" alt="Brother Logo" class="logo" width="200">
+    <div class="container">
+
+    <h1>Smooth Print</h1>
+    <form id="printForm">
+  	<!-- Dropdown List -->
+        <label for="template">Select Template:</label>
+        <select id="template" name="template">
+            <option value="test1.lbx">Test1</option>
+            <option value="test2.lbx">Test2</option>
+            <option value="test3.lbx">Test3</option>
+        </select>
+        <br><br>
+
+  	<!-- Dropdown List -->
+        <label for="papersize">Select Paper Size:</label>
+        <select id="papersize" name="papersize">
+            <option value="51x26.bin">51x26mm</option>
+            <option value="rd76.bin">RD76mm</option>
+            <option value="102x150.bin">102x150mm</option>
+        </select>
+        <br><br>
+
+        <label for="text1Object">Text Object:</label>
+        <input type="text" id="text1Object" name="text1Object" required><br><br>
+
+        <label for="barcodeObject">Barcode (Code128) Object:</label>
+        <input type="text" id="barcodeObject" name="barcodeObject" required><br><br>
+	
+	<label for="Orientation">Orientation:</label>
+	<select id="orientation">
+        <option value="portrait">Portrait</option>
+        <option value="landscape">Landscape</option>
+    	
+	</select>
+ 	<br><br>
+
+        <label for="copies">Copies:</label>
+        <input type="text" id="copies" name="copies" required><br><br>
+
+        <button type="button" onclick="sendToPrint()">Send to Print</button>
+
+    </form>
+
+    <script>
+        function sendToPrint() {
+            const template = document.getElementById('template').value;
+	    const papersize = document.getElementById('papersize').value;
+            const text1Object = document.getElementById('text1Object').value;
+            const barcodeObject = document.getElementById('barcodeObject').value;
+	    const orientation = document.getElementById('orientation').value;
+	    const copies = document.getElementById('copies').value;
+            
+	    const urlScheme = `brotherwebprint://print?filename=${encodeURIComponent(template)}&${encodeURIComponent(papersize)}&orientation=${encodeURIComponent(orientation)}&text_text=${encodeURIComponent(text1Object)}&barcode_barcode=${encodeURIComponent(barcodeObject)}&copies=${encodeURIComponent(copies)}`;
+
+            window.open(urlScheme, '_blank');
+        }
+    </script>
+</body>
+</html>
