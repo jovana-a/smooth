@@ -1,101 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smooth Print</title>
+    <title>Brother EuroCIS 25 Frozen Joghurt</title>
     <style>
         body {
-            background-color: mintcream;
             font-family: Arial, sans-serif;
+            background-image: url('file:///storage/emulated/0/Download/messe.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #4D4D4D;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
-            background-color: lightblue;
+            width: 90%;
+            max-width: 600px;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
-            width: 300px;
-            margin: auto;
-            text-align: center;
+            box-sizing: border-box;
         }
-        label, select, input, button {
-            color: red;
-            margin: 10px 0;
+        .section {
+            margin-bottom: 20px;
         }
         .logo {
-            display: block;
-            margin: 0 auto 20px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .url-scheme {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            word-wrap: break-word;
         }
     </style>
-
 </head>
 <body>
-
-    <img src="C:\Users\AbutovFr\Desktop\smooth print app\ver 11.1\ver 11.4 background\BrotherLogoBlue.png" alt="Brother Logo" class="logo" width="200">
     <div class="container">
-
-    <h1>Smooth Print</h1>
-    <form id="printForm">
-  	<!-- Dropdown List -->
-        <label for="template">Select Template:</label>
-        <select id="template" name="template">
-            <option value="test1.lbx">Test1</option>
-            <option value="test2.lbx">Test2</option>
-            <option value="test3.lbx">Test3</option>
-        </select>
-        <br><br>
-
-  	<!-- Dropdown List -->
-        <label for="papersize">Select Paper Size:</label>
-        <select id="papersize" name="papersize">
-            <option value="51x26.bin">51x26mm</option>
-            <option value="rd76.bin">RD76mm</option>
-            <option value="102x150.bin">102x150mm</option>
-        </select>
-        <br><br>
-
-        <label for="text1Object">Text Object:</label>
-        <input type="text" id="text1Object" name="text1Object" required><br><br>
-
-        <label for="barcodeObject">Barcode (Code128) Object:</label>
-        <input type="text" id="barcodeObject" name="barcodeObject" required><br><br>
-	
-	<label for="Orientation">Orientation:</label>
-	<select id="orientation">
-        <option value="portrait">Portrait</option>
-        <option value="landscape">Landscape</option>
-    	
-	</select>
- 	<br><br>
-
-        <label for="copies">Copies:</label>
-        <input type="text" id="copies" name="copies" required><br><br>
-
-        <button type="button" onclick="sendToPrint()">Send to Print</button>
-
-    </form>
-
-    <script>
-        function sendToPrint() {
-            const template = document.getElementById('template').value;
-	    const papersize = document.getElementById('papersize').value;
-            const text1Object = document.getElementById('text1Object').value;
-            const barcodeObject = document.getElementById('barcodeObject').value;
-	    const orientation = document.getElementById('orientation').value;
-	    const copies = document.getElementById('copies').value;
-            
-	    const urlScheme = `brotherwebprint://print?filename=${encodeURIComponent(template)}&${encodeURIComponent(papersize)}&orientation=${encodeURIComponent(orientation)}&text_text=${encodeURIComponent(text1Object)}&barcode_barcode=${encodeURIComponent(barcodeObject)}&copies=${encodeURIComponent(copies)}`;
-
-            window.open(urlScheme, '_blank');
-        }
-    
-	</script>
-	
-	<script src="app.js"></script>
-
+       storage/emulated/0/Download/Bluebar.jpg" alt="Logo" class="logo">
+        <h1>Brother EuroCIS 25</h1>
+        <h2>Frozen Joghurt</h2>
+        <div class="section">
+            <h2>Name:</h2>
+            <input type="text" id="customerName" placeholder="Dein Name">
+        </div>
+        <div class="section">
+            <h2>Wähle deine Soße:</h2>
+            <select id="sauce">
+                <option value="Karamell">Karamell</option>
+                <option value="Weiße Schokolade">Weiße Schokolade</option>
+                <option value="Dunkle Schokolade">Dunkle Schokolade</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Mango">Mango</option>
+            </select>
+        </div>
+        <div class="section">
+            <h2>Wähle bis zu 3 Toppings:</h2>
+            <input type="checkbox" name="toppings" value="Schokolinsen"> Schokolinsen<br>
+            <input type="checkbox" name="toppings" value="Schokostreusel"> Schokostreusel<br>
+            <input type="checkbox" name="toppings" value="Haselnusskrokant"> Haselnusskrokant<br>
+            <input type="checkbox" name="toppings" value="Bunte Streusel"> Bunte Streusel<br>
+            <input type="checkbox" name="toppings" value="Kokosraspeln"> Kokosraspeln<br>
+            <input type="checkbox" name="toppings" value="Knusper-Müsli"> Knusper-Müsli<br>
+            <input type="checkbox" name="toppings" value="Schoko-Knusper-Müsli"> Schoko-Knusper-Müsli<br>
+            <input type="checkbox" name="toppings" value="Erdbeeren"> Erdbeeren<br>
+            <input type="checkbox" name="toppings" value="Blaubeeren"> Blaubeeren<br>
+            <input type="checkbox" name="toppings" value="Sauerkirschen"> Sauerkirschen<br>
+        </div>
+        <button onclick="showSummary()">Absenden</button>
+        <div id="summary" class="section"></div>
+        <div class="buttons">
+            <button id="printButton" style="display:none;" onclick="sendToPrint()">Zum Drucken senden</button>
+            <button id="previewButton" style="display:none;" onclick="previewLink()">Preview Link</button>
+        </div>
+        <div id="urlScheme" class="url-scheme" style="display:none;">
+            <h3>Smooth Print URL Scheme</h3>
+            <p id="urlSchemeText"></p>
+        </div>
+    </div>
+    <script src="file:///storage/emulated/0/Download/app.js"></script>
 </body>
 </html>
